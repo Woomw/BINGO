@@ -30,12 +30,18 @@ public final class Personne {
 		for (int colonne = 0; colonne < 5; colonne++) {
 			if (this.grille.get(colonne).contains(numeroSorti)) {
 				for (int ligne = 0; ligne < 5; ligne++) {
-					if (((byte) this.grille.get(colonne).get(ligne)) == numeroSorti) {
+					if (Byte.valueOf(this.grille.get(colonne).get(ligne).toString()) == numeroSorti) {
 						this.grille.get(colonne).set(ligne, 0);
 					}
 					
 				}
 			}
+		}
+	}
+	
+	public void afficherGrilleJoueur() {
+		for (int ligne = 0; ligne < 5; ligne++) {
+			System.out.println(this.grille.get(ligne));
 		}
 	}
 }
